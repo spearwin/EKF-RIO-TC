@@ -23,7 +23,7 @@ The experimental setup includes the following components:
   Two publicly available datasets were used for testing:
   - [ICINS2021 Dataset](https://christopherdoer.github.io/datasets/icins_2021_radar_inertial_odometry)  
   - [ColoRadar Dataset](https://arpg.github.io/coloradar/)
-<img src="https://github.com/user-attachments/assets/db78e9c1-a39b-4762-86b7-ff2971b95bc1" alt="Trajectory" width="800">
+<img src="https://github.com/user-attachments/assets/c05b33c9-a520-40b0-a2bc-56669b038ad3" alt="Trajectory" width="800">
 
 **Black**: Ground truth, **Blue**: EKF-RIO, **Red**: EKF-RIO-TC (proposed).
 
