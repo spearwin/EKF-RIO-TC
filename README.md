@@ -1,6 +1,6 @@
 # EKF-Based Radar-Inertial Odometry with Online Temporal Calibration (EKF-RIO-TC)
 
-This repository contains the implementation of **EKF-Based Radar-Inertial Odometry with Online Temporal Calibration (EKF-RIO-TC)**. The corresponding paper has been submitted to **IEEE Robotics and Automation Letters (RA-L)** and is currently under review. 
+This repository contains the implementation of **EKF-Based Radar-Inertial Odometry with Online Temporal Calibration (EKF-RIO-TC)**. The corresponding paper is currently **under review.** 
 
 The code will be made publicly available after the review process is complete.
 
