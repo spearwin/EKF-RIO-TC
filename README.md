@@ -30,7 +30,7 @@ The experimental setup includes the following components:
 ## References
 
 ## Contact
-- Changseung Kim (pon02124@unist.ac.kr)
+ 
 
 ## Acknowledgement
 - This work builds upon the implementation of [EKF-RIO](https://github.com/christopherdoer/rio).
