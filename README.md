@@ -11,6 +11,13 @@ The experimental setup includes the following components:
 - **Ground Truth:** Provided using an OptiTrack motion capture system.
 <img src="https://github.com/user-attachments/assets/ec7b5533-3f71-49e1-9a4c-3ba9ed422c2b" alt="Experimental_Setup" width="500">
 
+### Sensor Setup
+For the Texas Instruments AWR1843BOOST radar sensor, configuration is performed via the [mmWave Demo Visualizer](https://dev.ti.com/gallery/view/mmwave/mmWave_Demo_Visualizer/ver/3.6.0/). In our self-collected dataset, the key radar parameters are as follows:
+- **Frame Rate:** 10 fps
+- **Doppler Velocity Resolution:** 0.06 m/s
+- **Range Resolution:** 0.04 m
+- **CFAR/Doppler Range Threshold:** 10 dB (this parameter may need adjustment based on environmental conditions)
+
 ## Datasets
 - **Self-collected Dataset**  
   The self-collected dataset consists of a total of 7 sequences, including data from radar, IMU, and ground truth provided by an OptiTrack motion capture system.  
