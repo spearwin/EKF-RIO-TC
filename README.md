@@ -1,8 +1,9 @@
 # EKF-Based Radar-Inertial Odometry with Online Temporal Calibration (EKF-RIO-TC)
 
-This repository contains the implementation of **EKF-Based Radar-Inertial Odometry with Online Temporal Calibration (EKF-RIO-TC)**. The corresponding paper is currently **under review.** 
+This repository contains the implementation of **EKF-Based Radar-Inertial Odometry with Online Temporal Calibration (EKF-RIO-TC)**.  
+The corresponding paper has been accepted for publication in **IEEE Robotics and Automation Letters (RA-L).**  
 
-The code will be made publicly available after the review process is complete.
+The code and dataset will be made publicly available soon.
 
 ## Experimental Setup
 The experimental setup includes the following components:
@@ -21,8 +22,8 @@ For the Texas Instruments AWR1843BOOST radar sensor, configuration is performed 
 ## Datasets
 - **Self-collected Dataset**  
   The self-collected dataset consists of a total of 7 sequences, including data from radar, IMU, and ground truth provided by an OptiTrack motion capture system.  
-  - **Sequence 1–3:** Contain minimal rotational motion.  
-  - **Sequence 4–7:** Contain significant rotational motion.  
+  - **Sequence 1–3:** Involve smoother motion with smaller gyroscope changes over the time offset interval.  
+  - **Sequence 4–7:** Exhibit greater variation, leading to a larger radar ego-velocity discrepancy and clearer impact of the time offset.
 
   It is available at [Dataset]().
 
@@ -35,9 +36,11 @@ For the Texas Instruments AWR1843BOOST radar sensor, configuration is performed 
 **Black**: Ground truth, **Blue**: EKF-RIO, **Red**: EKF-RIO-TC (proposed).
 
 ## References
+- C. Kim, G. Bae, W. Shin, S. Wang and H. Oh, "EKF-Based Radar-Inertial Odometry With Online Temporal Calibration," in IEEE Robotics and Automation Letters, vol. 10, no. 7, pp. 7230-7237, July 2025, [DOI Link](https://doi.org/10.1109/LRA.2025.3575320).
 
 ## Contact
- 
+- **Changseung Kim**  
+Email: pon02124@unist.ac.kr
 
 ## Acknowledgement
 - This work builds upon the implementation of [EKF-RIO](https://github.com/christopherdoer/rio).
