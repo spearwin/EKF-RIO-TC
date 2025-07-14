@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ekf_rio_tc</name>
+  <version>1.0.0</version>
+  <description>EKF-Based Radar-Inertial Odometry with Online Temporal Calibration.</description>
+
+  <maintainer email="pon02124@unist.ac.kr">Changseung Kim</maintainer>
+
+  <license>GPLv3</license>
+
+  <author email="pon02124@unist.ac.kr">Changseung Kim</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>catkin_simple</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  
+  <depend>message_runtime</depend>
+  <depend>rosbag</depend>
+  <depend>roscpp</depend>	
+  <depend>angles</depend>
+  <depend>dynamic_reconfigure</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_eigen</depend>
+
+  <depend>rio_utils</depend>
+  <depend>radar_ego_velocity_estimator</depend>
+
+  <export>
+  </export>
+</package>

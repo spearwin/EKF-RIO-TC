@@ -1,0 +1,21 @@
+## Topics
+topic_imu: "/gx5/imu/data"
+topic_radar_scan: "/mmWaveDataHdl/RScan"
+
+## Extrinsic calibration of body frame to radar frame
+# translation of radar frame expressed in body frame
+p_RinI_x: 0.09000053
+p_RinI_y: -0.14501446
+p_RinI_z: 0.02491406
+
+# rotation radar frame to body frame
+q_RtoI_w: -2.09450852e-04
+q_RtoI_x: 7.06823851e-01     
+q_RtoI_y: 7.07389536e-01
+q_RtoI_z: 2.09618480e-04
+
+# length of each radar frame (="exposure time" of radar scan) in milliseconds
+radar_frame_ms: 18.5
+
+# nominal radar rate
+radar_rate: 10

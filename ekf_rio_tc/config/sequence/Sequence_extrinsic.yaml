@@ -1,0 +1,21 @@
+## Topics
+topic_imu: "/imu/data"
+topic_radar_scan: "/ti_mmwave/radar_scan_pcl_0"
+
+## Extrinsic calibration of body frame to radar frame
+# translation of radar frame expressed in body frame
+p_RinI_x: 0.09
+p_RinI_y: -0.01
+p_RinI_z: -0.10
+
+# rotation radar frame to body frame
+q_RtoI_w: 0.6532815
+q_RtoI_x: -0.2705981
+q_RtoI_y: 0.2705981
+q_RtoI_z: -0.6532815
+
+# length of each radar frame (="exposure time" of radar scan) in milliseconds
+radar_frame_ms: 18.5
+
+# nominal radar rate
+radar_rate: 10

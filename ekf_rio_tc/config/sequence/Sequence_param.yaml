@@ -1,0 +1,123 @@
+## EKF-RIO-TC
+# General
+global_frame_id: "odom"
+body_frame_id: "imu"
+radar_frame_id: "radar"
+
+# Subscribers
+topic_imu: "/sensor_platform/imu"
+topic_baro_altimeter: "/sensor_platform/baro"
+topic_radar_scan: "/sensor_platform/radar/scan"
+topic_radar_trigger: "/sensor_platform/radar/trigger"
+
+# Rosbag mode --> used by rosbag node
+republish_ground_truth: False
+topic_ground_truth_pose: "/ground_truth/pose"
+topic_ground_truth_twist: "/ground_truth/twist"
+topic_ground_truth_twist_body: "/ground_truth/twist_body"
+
+# KF Updates
+run_without_radar_trigger: True
+invert_imu: False
+altimeter_update: False
+sigma_altimeter: 5.0
+radar_update: True
+use_ext_calib: False
+use_temp_calib: True
+
+# temporal calibration
+offset_delay: 0.0
+t_d_0: 0.0
+sigma_t_d: 0.05
+noise_psd_t_d: 0.000004
+
+# Radar Measurement Model
+outlier_percentil_radar: 0.05 # if you don't want to use chi-test, set 0.0
+use_w: True
+
+# Initialization
+T_init: 10
+calib_gyro: true
+g_n: 9.81
+
+p_IinG_x_0: 0
+p_IinG_y_0: 0
+p_IinG_z_0: 0
+
+v_IinG_x_0: 0
+v_IinG_y_0: 0
+v_IinG_z_0: 0
+
+q_ItoG_yaw_0_deg: 0
+
+b_a_x_0: 0
+b_a_y_0: 0
+b_a_z_0: 0
+
+b_g_x_0_deg: 0
+b_g_y_0_deg: 0
+b_g_z_0_deg: 0
+
+b_alt_0: 0
+
+# Initial Uncertainty
+sigma_p_IinG: 0
+sigma_v_IinG: 0
+sigma_q_ItoG_roll_pitch_0_deg: 0
+sigma_q_ItoG_yaw_0_deg: 0
+sigma_b_a: 0.02
+sigma_b_g_deg: 0.000003
+sigma_b_alt: 0.1
+
+sigma_p_RinI_x: 0.01
+sigma_p_RinI_y: 0.01
+sigma_p_RinI_z: 0.01
+sigma_q_RtoI_roll_deg: 0.25
+sigma_q_RtoI_pitch_deg: 0.25
+sigma_q_RtoI_yaw_deg: 0.25
+
+# Noise PSDs
+noise_psd_a: 0.03
+noise_psd_g_deg: 0.2
+noise_psd_b_a: 0.00001
+noise_psd_b_g_deg: 0.00001
+noise_psd_b_alt: 0.000001
+
+## Radar Ego Velocity Estimator
+# filtering
+min_dist: 0.1
+max_dist: 15
+min_db: 3
+elevation_thresh_deg: 15
+azimuth_thresh_deg: 60
+filter_min_z: -5
+filter_max_z: 5
+doppler_velocity_correction_factor: 1.0
+
+thresh_zero_velocity: 0.05
+allowed_outlier_percentage: 0.25
+sigma_zero_velocity_x: 0.025
+sigma_zero_velocity_y: 0.025
+sigma_zero_velocity_z: 0.025
+
+sigma_offset_radar_x: 0.05
+sigma_offset_radar_y: 0.05
+sigma_offset_radar_z: 0.05
+
+max_sigma_x: 0.2
+max_sigma_y: 0.2
+max_sigma_z: 0.2
+max_r_cond: 1.0e3
+use_cholesky_instead_of_bdcsvd: True
+
+use_ransac: True
+outlier_prob: 0.5
+success_prob: 0.9999
+N_ransac_points: 3
+inlier_thresh: 0.1
+
+use_odr: False
+min_speed_odr: 4.0
+sigma_v_d: 0.125
+model_noise_offset_deg: 2.0
+model_noise_scale_deg: 10.0

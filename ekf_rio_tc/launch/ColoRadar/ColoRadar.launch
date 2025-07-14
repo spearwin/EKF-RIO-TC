@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<launch>
+    <param name="use_sim_time" value="False" type="bool"/>
+    <arg name="do_plot" default="False"/>
+    <arg name="enable_rviz" default="True"/>
+
+    <arg name="config" default="Coloradar_param"/>
+    <arg name="calibration" default="Coloradar_extrinsic"/>
+
+    <arg name="filter_node_name" default="ekf_rio_tc"/>
+    <arg name="log_level" default="Info"/>
+
+    <node name="$(arg filter_node_name)" pkg="ekf_rio_tc" type="ros_node" output="screen">
+        <rosparam file="$(find ekf_rio_tc)/config/coloradar/$(arg config).yaml" command="load" ns=""/>
+        <rosparam file="$(find ekf_rio_tc)/config/coloradar/$(arg calibration).yaml" command="load" ns=""/>
+    </node>
+
+    <node pkg="rosservice" type="rosservice" name="set_$(arg filter_node_name)_log_level"
+          args="call --wait /$(arg filter_node_name)/set_logger_level 'ros.$(arg filter_node_name)' '$(arg log_level)'"/>
+
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ekf_rio_tc)/config/ekf_rio.rviz" if="$(arg enable_rviz)"/>
+</launch>

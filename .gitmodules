@@ -1,0 +1,3 @@
+[submodule "reve"]
+	path = reve
+	url = git@github.com:spearwin/reve.git

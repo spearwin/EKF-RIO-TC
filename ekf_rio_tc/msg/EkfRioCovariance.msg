@@ -1,0 +1,11 @@
+Header header
+
+geometry_msgs/Vector3 sigma_q_ItoG_eul_deg
+geometry_msgs/Vector3 sigma_b_g_deg
+geometry_msgs/Vector3 sigma_v_IinG
+geometry_msgs/Vector3 sigma_b_a
+geometry_msgs/Vector3 sigma_p_IinG
+float32 sigma_b_alt
+float32 sigma_t_d
+geometry_msgs/Vector3 sigma_p_RinI
+geometry_msgs/Vector3 sigma_q_RtoI_eul_deg
