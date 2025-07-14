@@ -3,7 +3,46 @@
 This repository contains the implementation of **EKF-Based Radar-Inertial Odometry with Online Temporal Calibration (EKF-RIO-TC)**.  
 The corresponding paper has been accepted for publication in **IEEE Robotics and Automation Letters (RA-L).**  
 
-The code and dataset will be made publicly available soon.
+## Prerequisites
+Make sure the following are installed:
+- ROS (e.g., Noetic or Melodic)
+- `catkin_tools`
+- [catkin_simple](https://github.com/catkin/catkin_simple):
+  ```bash
+  cd ~/catkin_ws/src
+  git clone https://github.com/catkin/catkin_simple.git
+### Build and Run
+
+```bash
+# Clone the repository and its submodules
+cd ~/catkin_ws/src
+git clone https://github.com/spearwin/EKF-RIO-TC.git
+cd EKF-RIO-TC
+git submodule update --init --recursive
+
+# Build the workspace
+cd ~/catkin_ws
+catkin build --cmake-args -DCMAKE_BUILD_TYPE=Release
+
+# Source the workspace
+source ~/catkin_ws/devel/setup.bash
+```
+
+To launch the system, choose one of the following based on your use case:
+
+- **If you are using rosbag playback:**
+  ```bash
+  roslaunch ekf_rio_tc <dataset_name>_rosbag.launch
+  ```
+
+- **If you are using live ROS topics:**
+  ```bash
+  roslaunch ekf_rio_tc <dataset_name>.launch
+  ```
+  or play the bag file manually:
+  ```bash
+  rosbag play <dataset_path>/<sequence>.bag
+  ```
 
 ## Experimental Setup
 The experimental setup includes the following components:
@@ -25,8 +64,11 @@ For the Texas Instruments AWR1843BOOST radar sensor, configuration is performed 
   - **Sequence 1–3:** Involve smoother motion with smaller gyroscope changes over the time offset interval.  
   - **Sequence 4–7:** Exhibit greater variation, leading to a larger radar ego-velocity discrepancy and clearer impact of the time offset.
 
-  It is available at [Dataset]().
-
+  The dataset is included in the repository under the following path:
+  ```
+  EKF-RIO-TC/ekf_rio_tc/datasets
+  ```
+  
 - **Open Datasets**  
   Two publicly available datasets were used for testing:
   - [ICINS2021 Dataset](https://christopherdoer.github.io/datasets/icins_2021_radar_inertial_odometry)  
